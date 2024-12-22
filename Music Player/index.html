@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">MusicApp</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Charts</a></li>
+                <li><a href="#">Events</a></li>
+                <li><a href="#">Features</a></li>
+            </ul>
+        </nav>
+        <div class="profile-icon">⚙️</div>
+    </header>
+
+    <!-- Main Banner Section -->
+    <section class="banner">
+        <h1>Explore Top Music Powered by Your Favorites</h1>
+        <p>We bring together your favorite music services to connect your musical world.</p>
+    </section>
+
+    <section class="artists">
+        <h1>Spiking Artists</h1>
+        <p>Click one to explore the artist and their similar artists</p>
+    </section>
+
+    <!-- Trending Artists Section -->
+<section class="trending-artists">
+    <div class="artist-container">
+        <!-- Central Artist -->
+        <div class="artist center">
+            <img src="images/bangtan.jpeg" alt="Main Artist">
+            <span class="artist-name">BTS</span>
+        </div>
+        <!-- Surrounding Artists with fixed positions -->
+        <div class="artist" style="--x: -215px; --y: -65px;"><img src="images/Selena Gomez.jpeg" alt="Selena Gomez"><span class="artist-name">Selena Gomez</span></div>
+        <div class="artist" style="--x: -430px; --y: 80px;"><img src="images/ldr.jpg" alt="Lana Del Rey"><span class="artist-name">Lana Del Rey</span></div>
+        <div class="artist" style="--x: -100px; --y: 120px;"><img src="images/Billie.jpg" alt="Billie Eilish"><span class="artist-name">Billie Eilish</span></div>
+        <div class="artist" style="--x: 100px; --y: -100px;"><img src="images/Olivia.jpeg" alt="Olivia Rodrigo"><span class="artist-name">Olivia Rodrigo</span></div>
+        <div class="artist" style="--x: 430px; --y: -45px;"><img src="images/AgustD.jpeg" alt="AgustD"><span class="artist-name">AgustD</span></div>
+        <div class="artist" style="--x: 430px; --y: 80px;"><img src="images/sabrina.jpeg" alt="Sabrina Carpenter"><span class="artist-name">Sabrina Carpenter</span></div>
+        <div class="artist" style="--x: -330px; --y: -110px;"><img src="images/Shawn Mendes.jpeg" alt="Shawn Mendes"><span class="artist-name">Shawn Mendes</span></div>
+        <div class="artist" style="--x: 215px; --y: -65px;"><img src="images/Neha Kakkar.png" alt="Neha Kakkar"><span class="artist-name">Neha Kakkar</span></div>
+        <div class="artist" style="--x: -430px; --y: -45px;"><img src="images/Weekend.jpeg" alt="The Weeknd"><span class="artist-name">The Weeknd</span></div>
+        <div class="artist" style="--x: 330px; --y: -110px;"><img src="images/EnnWoo.jpg" alt="Cha Enn Woo"><span class="artist-name">Cha Enn Woo</span></div>
+        <div class="artist" style="--x: -540px; --y: 10px;"><img src="images/IU.jpg" alt="IU"><span class="artist-name">IU</span></div>
+        <div class="artist" style="--x: -220px; --y: 80px;"><img src="images/Sonu Nigam.jpg" alt="Sonu Nigam"><span class="artist-name">Sonu Nigam</span></div>
+        <div class="artist" style="--x: -130px; --y: 10px;"><img src="images/V.jpg" alt="V"><span class="artist-name">V</span></div>
+        <div class="artist" style="--x: -100px; --y: -100px;"><img src="images/taylor.jpg_large" alt="Taylor Swift"><span class="artist-name">Taylor Swift</span></div>
+        <div class="artist" style="--x: 100px; --y: 120px;"><img src="images/JK.jpg" alt="JungKook"><span class="artist-name">JungKook</span></div>
+        <div class="artist" style="--x: 130px; --y: 10px;"><img src="images/Shrinkhal.jpg" alt="Shrinkhal"><span class="artist-name">Shrinkhal</span></div>
+        <div class="artist" style="--x: 220px; --y: 80px;"><img src="images/JM.jpg" alt="Jimin"><span class="artist-name">Jimin</span></div>
+        <div class="artist" style="--x: -330px; --y: 120px;"><img src="images/Dhvani.jpeg" alt="Dhvani Bhanushali"><span class="artist-name">Dhvani Bhanushali</span></div>
+        <div class="artist" style="--x: 330px; --y: 120px;"><img src="images/Shreya.jpeg" alt="Shreya Ghoshal"><span class="artist-name">Shreya Ghoshal</span></div>
+        <div class="artist" style="--x: -310px; --y: 10px;"><img src="images/JHope.png" alt="J Hope"><span class="artist-name">J Hope</span></div>
+        <div class="artist" style="--x: 310px; --y: 10px;"><img src="images/Darshan Raval.jpg" alt="Darshan Raval"><span class="artist-name">Darshan Raval</span></div>
+        <div class="artist" style="--x: 540px; --y: 10px;"><img src="images/Neighbourhood.jpg" alt="The Neighbourhood"><span class="artist-name">The Neighbourhood</span></div>
+    </div>
+</section>
+
+<!-- Music Player Section (Initially Hidden) -->
+<div id="musicPlayer" class="music-player" style="display: none;">
+    <img id="songCover" src="" alt="Song Cover" class="song-cover">
+    <div class="song-info">
+        <h3 id="songTitle">Song Title</h3>
+        <p id="artistName">Artist Name</p>
+    </div>
+    <audio id="audioPlayer" controls>
+        <source id="audioSource" src="" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
