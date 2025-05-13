@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony - Music Player App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="images/app-icon.png">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <i class="fas fa-music"></i>
+            <span>Harmony</span>
+        </div>
+        
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search artists, songs...">
+            <button id="searchBtn"><i class="fas fa-search"></i></button>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-music"></i> Library</a></li>
+                <li><a href="#"><i class="fas fa-chart-line"></i> Charts</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Events</a></li>
+            </ul>
+        </nav>
+        
+        <div class="profile-section">
+            <div class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span class="notification-count">3</span>
+            </div>
+            <div class="profile-icon">
+                <img src="images/profile-placeholder.jpg" alt="Profile">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero-banner">
+            <div class="banner-content">
+                <h1>Discover Your Soundtrack</h1>
+                <p>Millions of songs at your fingertips. Create playlists, follow artists, and explore new music.</p>
+                <button class="cta-button">Start Listening</button>
+            </div>
+            <div class="banner-overlay"></div>
+        </section>
+
+        <!-- Featured Section -->
+        <section class="featured-section">
+            <div class="section-header">
+                <h2>Featured This Week</h2>
+                <p>New releases and trending music</p>
+            </div>
+            
+            <div class="featured-container">
+                <div class="featured-card" data-artist="BTS">
+                    <div class="featured-image">
+                        <img src="images/Butter.jpg" alt="Featured">
+                        <div class="featured-badge">New Release</div>
+                        <div class="play-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Dynamite</h3>
+                        <p>BTS</p>
+                    </div>
+                </div>
+                
+                <div class="featured-card" data-artist="Taylor Swift">
+                    <div class="featured-image">
+                        <img src="images/taylor.jpg_large" alt="Featured">
+                        <div class="featured-badge">Trending</div>
+                        <div class="play-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Anti-Hero</h3>
+                        <p>Taylor Swift</p>
+                    </div>
+                </div>
+                
+                <div class="featured-card" data-artist="The Weeknd">
+                    <div class="featured-image">
+                        <img src="images/Weekend.jpeg" alt="Featured">
+                        <div class="featured-badge">Popular</div>
+                        <div class="play-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="featured-info">
+                        <h3>Blinding Lights</h3>
+                        <p>The Weeknd</p>
+                    </div>
+                </div>
+                
+                <div class="featured-card" data-artist="Billie Eilish">
+                    <div class="featured-image">
+                        <img src="images/Billie.jpg" alt="Featured">
+                        <div class="featured-badge">Editor's Pick</div>
+                        <div class="play-overlay">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <div class="featured-info">
+                        <h3>bad guy</h3>
+                        <p>Billie Eilish</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artists Section -->
+        <section class="artists-section">
+            <div class="section-header">
+                <h2>Popular Artists</h2>
+                <p>Click to explore and play their music</p>
+            </div>
+            
+            <div class="artist-grid">
+                <div class="artist-card" data-artist="BTS">
+                    <div class="artist-image">
+                        <img src="images/bangtan.jpeg" alt="BTS">
+                        <div class="artist-hover">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <h3>BTS</h3>
+                    <p>K-Pop</p>
+                </div>
+                
+                <div class="artist-card" data-artist="Taylor Swift">
+                    <div class="artist-image">
+                        <img src="images/taylor.jpg_large" alt="Taylor Swift">
+                        <div class="artist-hover">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <h3>Taylor Swift</h3>
+                    <p>Pop</p>
+                </div>
+                
+                <div class="artist-card" data-artist="The Weeknd">
+                    <div class="artist-image">
+                        <img src="images/Weekend.jpeg" alt="The Weeknd">
+                        <div class="artist-hover">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <h3>The Weeknd</h3>
+                    <p>R&B</p>
+                </div>
+                
+                <div class="artist-card" data-artist="Billie Eilish">
+                    <div class="artist-image">
+                        <img src="images/Billie.jpg" alt="Billie Eilish">
+                        <div class="artist-hover">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <h3>Billie Eilish</h3>
+                    <p>Alternative</p>
+                </div>
+                
+                <div class="artist-card" data-artist="Lana Del Rey">
+                    <div class="artist-image">
+                        <img src="images/ldr.jpg" alt="Lana Del Rey">
+                        <div class="artist-hover">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <h3>Lana Del Rey</h3>
+                    <p>Alternative</p>
+                </div>
+                
+                <div class="artist-card" data-artist="Olivia Rodrigo">
+                    <div class="artist-image">
+                        <img src="images/Olivia.jpeg" alt="Olivia Rodrigo">
+                        <div class="artist-hover">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <h3>Olivia Rodrigo</h3>
+                    <p>Pop</p>
+                </div>
+                
+                <div class="artist-card" data-artist="JungKook">
+                    <div class="artist-image">
+                        <img src="images/JK.jpg" alt="JungKook">
+                        <div class="artist-hover">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <h3>JungKook</h3>
+                    <p>K-Pop</p>
+                </div>
+                
+                <div class="artist-card" data-artist="Darshan Raval">
+                    <div class="artist-image">
+                        <img src="images/Darshan Raval.jpg" alt="Darshan Raval">
+                        <div class="artist-hover">
+                            <button class="play-btn"><i class="fas fa-play"></i></button>
+                        </div>
+                    </div>
+                    <h3>Darshan Raval</h3>
+                    <p>Bollywood</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recently Played Section -->
+        <section class="recently-played">
+            <div class="section-header">
+                <h2>Recently Played</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
+            <div class="tracks-container" id="recentlyPlayed">
+                <!-- Filled by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Playlists Section -->
+        <section class="playlists-section">
+            <div class="section-header">
+                <h2>Your Playlists</h2>
+                <button id="createPlaylist"><i class="fas fa-plus"></i> Create New</button>
+            </div>
+            <div class="playlists-container">
+                <div class="playlist-card">
+                    <div class="playlist-image" style="background-image: url('images/playlist-placeholder.jpg');">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3>K-Pop Hits</h3>
+                    <p>12 tracks</p>
+                </div>
+                
+                <div class="playlist-card">
+                    <div class="playlist-image" style="background-image: url('images/playlist-placeholder.jpg');">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3>Workout Mix</h3>
+                    <p>18 tracks</p>
+                </div>
+                
+                <div class="playlist-card">
+                    <div class="playlist-image" style="background-image: url('images/playlist-placeholder.jpg');">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3>Chill Vibes</h3>
+                    <p>24 tracks</p>
+                </div>
+                
+                <div class="playlist-card">
+                    <div class="playlist-image" style="background-image: url('images/playlist-placeholder.jpg');">
+                        <div class="play-button"><i class="fas fa-play"></i></div>
+                    </div>
+                    <h3>Road Trip</h3>
+                    <p>15 tracks</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Genres Section -->
+        <section class="genres-section">
+            <div class="section-header">
+                <h2>Browse Genres</h2>
+                <a href="#" class="see-all">See All</a>
+            </div>
+            <div class="genres-container">
+                <div class="genre-card" style="background-image: linear-gradient(to bottom right, #ff416c, #ff4b2b);">
+                    <h3>Pop</h3>
+                </div>
+                <div class="genre-card" style="background-image: linear-gradient(to bottom right, #1e3c72, #2a5298);">
+                    <h3>Rock</h3>
+                </div>
+                <div class="genre-card" style="background-image: linear-gradient(to bottom right, #11998e, #38ef7d);">
+                    <h3>Hip-Hop</h3>
+                </div>
+                <div class="genre-card" style="background-image: linear-gradient(to bottom right, #f12711, #f5af19);">
+                    <h3>Electronic</h3>
+                </div>
+                <div class="genre-card" style="background-image: linear-gradient(to bottom right, #8e2de2, #4a00e0);">
+                    <h3>R&B</h3>
+                </div>
+                <div class="genre-card" style="background-image: linear-gradient(to bottom right, #f953c6, #b91d73);">
+                    <h3>K-Pop</h3>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Music Player -->
+    <div id="musicPlayer" class="music-player">
+        <div class="player-left">
+            <img id="songCover" src="images/Butter.jpg" alt="Song Cover" class="song-cover">
+            <div class="song-info">
+                <h3 id="songTitle">Dynamite</h3>
+                <p id="artistName">BTS</p>
+            </div>
+            <button class="like-btn"><i class="far fa-heart"></i></button>
+        </div>
+        
+        <div class="player-center">
+            <div class="player-controls">
+                <button id="shuffleBtn"><i class="fas fa-random"></i></button>
+                <button id="prevBtn"><i class="fas fa-step-backward"></i></button>
+                <button id="playBtn"><i class="fas fa-play"></i></button>
+                <button id="nextBtn"><i class="fas fa-step-forward"></i></button>
+                <button id="repeatBtn"><i class="fas fa-redo"></i></button>
+            </div>
+            <div class="progress-container">
+                <span class="time-current">0:00</span>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <span class="time-total">3:45</span>
+            </div>
+        </div>
+        
+        <div class="player-right">
+            <button id="queueBtn"><i class="fas fa-list"></i> Queue</button>
+            <div class="volume-control">
+                <i class="fas fa-volume-up"></i>
+                <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+            </div>
+        </div>
+        
+        <audio id="audioPlayer">
+            <source id="audioSource" src="Songs/Dynamite.mp3" type="audio/mp3">
+        </audio>
+    </div>
+
+    <!-- Queue Modal -->
+    <div id="queueModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Playback Queue</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="queue-list" id="queueList">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Playlist Modal -->
+    <div id="playlistModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Create New Playlist</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <form id="playlistForm">
+                <input type="text" id="playlistName" placeholder="Playlist name" required>
+                <textarea id="playlistDesc" placeholder="Description (optional)"></textarea>
+                <button type="submit">Create Playlist</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Search Results Modal -->
+    <div id="searchModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Search Results</h3>
+                <span class="close-modal">&times;</span>
+            </div>
+            <div class="search-results" id="searchResults">
+                <!-- Filled by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
