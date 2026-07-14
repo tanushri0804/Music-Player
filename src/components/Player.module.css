@@ -1,0 +1,200 @@
+.player {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  height: var(--player-h);
+  background: rgba(14,14,22,0.92);
+  backdrop-filter: blur(24px);
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 50;
+  gap: 16px;
+}
+
+/* ── Left ── */
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 28%;
+  min-width: 0;
+}
+
+.coverWrap {
+  width: 52px; height: 52px;
+  border-radius: 8px;
+  overflow: hidden;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+.coverWrap img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+}
+/* subtle rotation animation while playing */
+.spin img {
+  animation: rotate 12s linear infinite;
+  border-radius: 50%;
+}
+@keyframes rotate { to { transform: rotate(360deg); } }
+
+.trackInfo { min-width: 0; }
+.trackTitle {
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+.trackArtist {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ── Center ── */
+.center {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: 540px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.iconBtn {
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s, background 0.15s;
+}
+.iconBtn:hover  { color: var(--text-primary); background: var(--bg-elevated); }
+.iconBtn.active { color: var(--accent); }
+.iconBtn.liked  { color: #ef4444; }
+
+.playBtn {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: #0a0a0f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s, background 0.15s;
+  margin: 0 6px;
+  flex-shrink: 0;
+}
+.playBtn:hover { transform: scale(1.06); background: #f0f0f0; }
+
+.progressRow {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.time {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+  width: 32px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.bar {
+  flex: 1;
+  height: 4px;
+  background: var(--bg-elevated);
+  border-radius: 99px;
+  cursor: pointer;
+  position: relative;
+}
+.bar:hover { height: 5px; }
+
+.fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 99px;
+  position: relative;
+  transition: width 0.1s linear;
+}
+
+.thumb {
+  position: absolute;
+  right: -6px; top: 50%;
+  transform: translateY(-50%);
+  width: 12px; height: 12px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.15s;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246,0.4);
+}
+.bar:hover .thumb { opacity: 1; }
+
+/* ── Right ── */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 28%;
+  justify-content: flex-end;
+}
+
+.queueBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  white-space: nowrap;
+}
+.queueBtn:hover {
+  color: var(--text-primary);
+  border-color: rgba(59, 130, 246,0.4);
+  background: var(--bg-elevated);
+}
+
+.volSlider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 88px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--accent) 0%,
+    var(--accent) var(--vol, 70%),
+    var(--bg-elevated) var(--vol, 70%),
+    var(--bg-elevated) 100%
+  );
+  border-radius: 99px;
+  outline: none;
+  cursor: pointer;
+}
+.volSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 13px; height: 13px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246,0.3);
+}

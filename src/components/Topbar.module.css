@@ -1,0 +1,98 @@
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 32px;
+  background: var(--bg-surface);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  gap: 16px;
+}
+
+.searchWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 420px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 14px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 9px 36px 9px 38px;
+  color: var(--text-primary);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.input::placeholder { color: var(--text-muted); }
+.input:focus {
+  border-color: rgba(59, 130, 246,0.5);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246,0.1);
+}
+
+.clear {
+  position: absolute;
+  right: 12px;
+  color: var(--text-muted);
+  display: flex;
+  transition: color 0.2s;
+}
+.clear:hover { color: var(--text-secondary); }
+
+@keyframes spinAnim { to { transform: rotate(360deg); } }
+.spin { animation: spinAnim 0.8s linear infinite; }
+
+.right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bell {
+  position: relative;
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  transition: background 0.2s, color 0.2s;
+}
+.bell:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+.dot {
+  position: absolute;
+  top: 8px; right: 8px;
+  width: 7px; height: 7px;
+  background: var(--accent);
+  border-radius: 50%;
+  border: 2px solid var(--bg-surface);
+}
+
+.avatar {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.avatar:hover { opacity: 0.85; }

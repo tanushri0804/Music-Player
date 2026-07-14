@@ -1,0 +1,107 @@
+.list { display: flex; flex-direction: column; gap: 2px; }
+
+.row {
+  display: grid;
+  grid-template-columns: 32px 44px 1fr 1fr 60px 28px 44px;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.row:hover  { background: var(--bg-elevated); }
+.active     { background: rgba(59, 130, 246,0.08); }
+.active:hover { background: rgba(59, 130, 246,0.12); }
+
+.num {
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.idxNum {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* animated bars for currently playing */
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+}
+.bars span {
+  display: block;
+  width: 3px;
+  background: var(--accent);
+  border-radius: 2px;
+  animation: barBounce 0.7s ease-in-out infinite alternate;
+}
+.bars span:nth-child(2) { animation-delay: 0.15s; }
+.bars span:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes barBounce {
+  from { height: 4px; }
+  to   { height: 14px; }
+}
+
+.cover {
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.info { min-width: 0; }
+.trackTitle {
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-primary);
+}
+.artist {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.album {
+  font-size: 13px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.plays {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.likeBtn {
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  border-radius: 4px;
+  transition: color 0.2s;
+  opacity: 0;
+}
+.row:hover .likeBtn { opacity: 1; }
+.liked { color: #ef4444; opacity: 1; }
+.likeBtn:hover { color: #ef4444; }
+
+.dur {
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

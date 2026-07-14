@@ -1,0 +1,54 @@
+.root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background: var(--bg-base);
+}
+
+.icon {
+  width: 70px; height: 70px;
+  border-radius: 18px;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 0 40px rgba(59, 130, 246,0.4);
+  animation: iconPulse 2s ease-in-out infinite;
+}
+@keyframes iconPulse {
+  0%,100% { box-shadow: 0 0 40px rgba(59, 130, 246,0.4); }
+  50%      { box-shadow: 0 0 70px rgba(59, 130, 246,0.7); }
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  height: 36px;
+}
+.bar {
+  width: 6px;
+  background: linear-gradient(to top, var(--accent), var(--accent));
+  border-radius: 3px;
+  animation: barBounce 0.9s ease-in-out infinite alternate;
+}
+@keyframes barBounce {
+  from { height: 6px;  opacity: 0.4; }
+  to   { height: 36px; opacity: 1;   }
+}
+
+.label {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+.sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: -8px;
+}

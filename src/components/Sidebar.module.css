@@ -1,0 +1,125 @@
+.sidebar {
+  width: 220px;
+  min-width: 220px;
+  height: 100%;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  gap: 8px;
+  overflow-y: auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-primary);
+  padding: 0 8px;
+  margin-bottom: 20px;
+}
+.logo svg { color: var(--accent); }
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+}
+.navItem:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+.navItem.active {
+  background: rgba(59, 130, 246,0.14);
+  color: var(--accent);
+}
+
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 12px 0;
+}
+
+.section { display: flex; flex-direction: column; gap: 2px; }
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.addBtn {
+  color: var(--text-muted);
+  transition: color 0.2s;
+  display: flex;
+}
+.addBtn:hover { color: var(--accent); }
+
+.playlistItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+}
+.playlistItem:hover {
+  background: var(--bg-elevated);
+  color: var(--text-primary);
+}
+
+.playlistDot {
+  width: 6px; height: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.likedBtn {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  transition: background 0.15s, color 0.15s;
+  cursor: pointer;
+  margin-top: auto;
+}
+.likedBtn:hover {
+  background: var(--bg-elevated);
+  color: #ef4444;
+}
