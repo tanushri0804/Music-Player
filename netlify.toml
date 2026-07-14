@@ -1,19 +1,20 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  functions = "netlify/functions"
 
 [build.environment]
   NODE_VERSION = "20"
 
-# Redirect all routes to index.html for React Router (SPA)
+# Rewrite /api/itunes/* → Netlify Function (works in production)
+[[redirects]]
+  from = "/api/itunes/*"
+  to = "/.netlify/functions/itunes"
+  status = 200
+  force = true
+
+# React Router — send all unmatched routes to index.html (must be last)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-
-# Proxy iTunes API calls to avoid CORS in production
-[[redirects]]
-  from = "/api/itunes/*"
-  to = "https://itunes.apple.com/:splat"
-  status = 200
-  force = true

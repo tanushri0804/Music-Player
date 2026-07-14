@@ -72,11 +72,13 @@ export function PlayerProvider({ children }) {
   useEffect(() => {
     fetchStarterLibrary()
       .then(tracks => {
-        if (!tracks.length) throw new Error('No tracks returned from API');
+        // fetchStarterLibrary always resolves (never rejects) —
+        // it returns fallback tracks if the API is down
         dispatch({ type: 'SET_QUEUE', payload: tracks });
       })
       .catch(err => {
-        console.error('Library load failed:', err);
+        // Should never reach here, but just in case
+        console.error('Library load failed completely:', err);
         dispatch({ type: 'SET_ERROR', payload: err.message });
       });
   }, []);
